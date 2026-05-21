@@ -1,2 +1,3 @@
 #!/bin/bash
-python3 -c "print('{:08b}'.format($1))"
+bin=$(echo "obase=2; $1" | bc)
+printf "%08s\n" "$bin" | tr ' ' '0'
